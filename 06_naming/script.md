@@ -21,6 +21,7 @@ SECONDS_PER_DAY = 86400
 ```
 
 **Казваш**:
+
 > „Лоши имена са номер едно признак на junior код. Гледай това — може да пишеш на ниво senior още утре. Само 4 правила. 3 минути и са в главата."
 
 ---
@@ -50,9 +51,11 @@ def fetch_user_by_id(user_id):
 ```
 
 **Казваш докато пишеш** `user_email`:
+
 > „Snake case — малки букви, думите свързани с долна черта. Защо snake? Защото underscore-ите изглеждат като змия извиваща се между думите."
 
 **Казваш докато пишеш функциите**:
+
 > „Същото важи за functions. `snake_case` за неща, които правят или съдържат данни."
 
 **Пишеш camelCase примера**:
@@ -65,6 +68,7 @@ def calculateTotal(items): ...
 ```
 
 **Казваш**:
+
 > „Ако идваш от Java или JavaScript — там е camelCase, малка първа буква, главна за следваща дума. В Python технически работи, но всеки Python developer ще те погледне странно. Ruff linter ще warn-не."
 
 > „Защо? Защото built-in functions са snake_case — `print`, `len`, `isinstance`. Твоят код трябва да изглежда като стандартната библиотека."
@@ -88,6 +92,7 @@ PI = 3.14159
 ```
 
 **Казваш докато пишеш**:
+
 > „Constants — стойности, които не променяме след инициализация. Главни букви, underscore-и между думите."
 
 > „Python няма истински constants — технически можеш да направиш `MAX_RETRIES = 5` по-късно. Главните букви са сигнал към другите developers: не пипай това."
@@ -117,11 +122,13 @@ class DatabaseConnection:
 ```
 
 **Казваш докато пишеш**:
+
 > „Classes — PascalCase. Главна първа буква за всяка дума. Без underscore."
 
 > „Универсална конвенция — Java, C#, TypeScript — всички ползват PascalCase за classes."
 
 **Казваш докато пишеш `HTTPClient`**:
+
 > „Виж — `HTTPClient`. Акроними в Python остават главни в class names. Не `HttpClient`. Дискусионно — и двете виждаш в реални codebase-и."
 
 > „Засега само naming — classes разглеждаме детайлно в видео 61."
@@ -147,11 +154,13 @@ class Cache:
 ```
 
 **Казваш докато пишеш `self._items`**:
+
 > „Долна черта пред името — конвенция за private. Не пипай отвън."
 
 > „Python няма истински private. Можеш да достъпиш `cache._items` от навсякъде. Но underscore-ът е сигнал: това е internal, може да се промени без warning."
 
 **Казваш накрая**:
+
 > „Двойна долна черта от двете страни — `__init__`, `__str__` — това са dunder methods, double underscore. Специални. Ще ги разгледаме в видео 67."
 
 ---
@@ -171,6 +180,7 @@ return = 5         # ❌ SyntaxError
 ```
 
 **Казваш**:
+
 > „Тези думи са reserved — Python ги ползва за синтаксис. Не можеш да ги ползваш като имена."
 
 **Пишеш решението**:
@@ -182,6 +192,7 @@ type_ = "admin"
 ```
 
 **Казваш**:
+
 > „Ако наистина трябва — конвенцията е trailing underscore. Случва се когато правиш wrapper около external API, който има `class` параметър."
 
 ---
@@ -201,6 +212,7 @@ nums = list(range(5)) # ❌ TypeError: 'list' object is not callable
 ```
 
 **Казваш докато пишеш**:
+
 > „Гледай това. Сложих `list = [1, 2, 3]`. Override-нах built-in-а `list`. Сега когато опитам `list(range(5))` — грешка. Типът `list` вече не съществува."
 
 > „Pylance подчертава ето тук — виж жълтата линия. Казва: shadows built-in name `list`."
@@ -232,6 +244,7 @@ def calculate_tax(price: float, quantity: int) -> float:
 ```
 
 **Казваш**:
+
 > „Сравни. Двете правят абсолютно същото. Долният — четим. Преди type hints, преди docstring — просто имената казват всичко."
 
 > „Запомни: кодът се чете 10 пъти повече, отколкото се пише. Компилаторът не го интересува дали си писал `x` или `customer_lifetime_value`. Хората — да."
@@ -241,6 +254,7 @@ def calculate_tax(price: float, quantity: int) -> float:
 ## СЦЕНА 8 — CTA (3:45 – 4:00)
 
 **Казваш**:
+
 > „Следващото — numbers. Защо `0.1 + 0.2` не е `0.3` в Python. И как не правиш бъгове с пари. Натисни тук."
 
 ---
@@ -255,12 +269,12 @@ _leading      → "private" (конвенция)
 __dunder__    → special methods
 ```
 
-| ❌ Лоши имена                              | ✅ Добри имена                         |
-|--------------------------------------------|----------------------------------------|
-| `x, y, z, d, lst, fn1, temp`              | `user_email, retry_count, items`       |
-| `list, dict, str, type, id` (built-ins!)  | `my_list, user_dict, name_str`         |
-| `camelCase` за variables                   | `snake_case` за variables              |
-| single letters (освен `i, j, k` в loops)  | `calculate_total`, `MAX_SIZE`          |
+| ❌ Лоши имена                            | ✅ Добри имена                   |
+| ---------------------------------------- | -------------------------------- |
+| `x, y, z, d, lst, fn1, temp`             | `user_email, retry_count, items` |
+| `list, dict, str, type, id` (built-ins!) | `my_list, user_dict, name_str`   |
+| `camelCase` за variables                 | `snake_case` за variables        |
+| single letters (освен `i, j, k` в loops) | `calculate_total`, `MAX_SIZE`    |
 
 ---
 
